@@ -1,4 +1,5 @@
-import java.util.Scanner;
+import edu.princeton.cs.algs4.StdRandom;
+import edu.princeton.cs.algs4.StdStats;
 
 /**
  * Created by Huiying Li on 29/11/2016.
@@ -47,9 +48,8 @@ public class PercolationStats {
 
     // test client (described below)
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        int i = sc.nextInt();
-        int j = sc.nextInt();
+        int i = Integer.parseInt(args[0]);
+        int j = Integer.parseInt(args[1]);
         PercolationStats pls=new PercolationStats(i,j);
         System.out.printf("mean                     = %f\n", pls.mean());
         System.out.printf("stddev                   = %f\n", pls.stddev());
