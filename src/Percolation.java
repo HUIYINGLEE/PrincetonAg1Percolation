@@ -13,6 +13,7 @@ public class Percolation {
 
     // create n-by-n grid, with all sites blocked
     public Percolation(int n) {
+        if (n<0){throw new IndexOutOfBoundsException();}
         N=n;
         size=n*n;
         indexes= new int[n][n];
@@ -47,6 +48,7 @@ public class Percolation {
 
     // open site (row, col) if it is not open already
     public void open(int row, int col){
+        if (row<0 || col<0 || row>N-1 || col> N-1){throw new IndexOutOfBoundsException();}
         if (row <= 0 || col <= 0) throw new IndexOutOfBoundsException();
         opened[row-1][col-1]=true;
         //union the neighbour opened site.

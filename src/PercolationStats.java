@@ -8,6 +8,7 @@ public class PercolationStats {
     private double[] threshold;
     // perform trials independent experiments on an n-by-n grid
     public PercolationStats(int n, int trials){
+        if (n<0 || trials<1){throw new IndexOutOfBoundsException();}
         threshold=new double[trials];
         // loop T times
         for (int i=0; i< trials; i++){
